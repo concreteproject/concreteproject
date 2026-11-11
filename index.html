@@ -3,65 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Wklej poniżej kod weryfikacyjny z Pinteresta -->
-    
-    <meta name="p:domain_verify" content="742316494df54d6401e554fd9f0f9c96"/>
-<title>Concrete Project | Formy 3D i Odlewy Betonowe</title>
+    <title>Concrete Project | Formy 3D i Odlewy Betonowe</title>
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #f0f0f0;
+        }
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
             text-align: center;
         }
         h1 {
-            font-size: 3rem;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            color: #d4d4d4;
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+            font-weight: 700;
         }
-        p {
-            font-size: 1.2rem;
+        .subtitle {
+            color: #aaa;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .services {
+            margin: 30px 0 40px 0;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 24px 0;
+        }
+        .services-title {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
             color: #888;
-            max-width: 600px;
-            margin-bottom: 30px;
-            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+        .services-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .services-list li {
+            color: #ddd;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
         .btn {
-            background-color: #f0f0f0;
-            color: #1a1a1a;
-            padding: 15px 30px;
+            display: inline-block;
+            background-color: #ffffff;
+            color: #121212;
+            padding: 14px 28px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             border-radius: 4px;
-            transition: background 0.3s ease;
+            transition: background-color 0.2s ease;
         }
         .btn:hover {
-            background-color: #888;
-            color: #fff;
+            background-color: #cccccc;
         }
     </style>
 </head>
 <body>
-    <h1>Concrete Project</h1>
-    <p>Nowoczesna manufaktura. Surowe odlewy z betonu architektonicznego, formy z druku 3D FDM i detale w stylu loft.</p>
-    <a href="mailto:kontakt@concreteproject.pl" class="btn">Skontaktuj się z nami</a>
 
-<div style="margin-top: 40px; text-align: left; max-width: 500px; color: #aaa; font-size: 0.95rem; line-height: 1.8;">
-    <p><strong>Zakres realizacji:</strong></p>
-    <ul style="padding-left: 20px;">
-        <li>Detale z betonu architektonicznego na zamówienie (B2B / B2C)</li>
-        <li>Projektowanie i druk 3D form matrycowych </li>
-        <li>Odlewy i prototypowanie</li>
-    </ul>
-</div>
+    <div class="container">
+        <h1>CONCRETE PROJECT</h1>
+        <p class="subtitle">Nowoczesna manufaktura. Surowe odlewy z betonu architektonicznego, formy z druku 3D oraz detale w stylu loft.</p>
+
+        <div class="services">
+            <div class="services-title">Zakres realizacji</div>
+            <ul class="services-list">
+                <li>Detale z betonu architektonicznego na zamówienie (B2B / B2C)</li>
+                <li>Projektowanie i druk 3D form matrycowych</li>
+                <li>Odlewy i prototypowanie</li>
+            </ul>
+        </div>
+
+        <a href="mailto:kontakt@concreteproject.pl" class="btn">Skontaktuj się z nami</a>
+    </div>
+
 </body>
 </html>
