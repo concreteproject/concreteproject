@@ -3,96 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concrete Project | Formy 3D i Odlewy Betonowe</title>
+    <title>CONCRETE PROJECT | Manufaktura & Design Lab</title>
     <style>
+        :root {
+            --bg: #09090b;
+            --card-bg: #121215;
+            --card-border: #27272a;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --accent: #e4e4e7;
+            --accent-subtle: #3f3f46;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             min-height: 100vh;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5rem;
-            letter-spacing: 4px;
-            margin-bottom: 16px;
-            font-weight: 700;
-        }
-        .subtitle {
-            color: #aaa;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 40px;
-        }
-        .services {
-            margin: 30px 0 40px 0;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-            padding: 24px 0;
-        }
-        .services-title {
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            color: #888;
-            margin-bottom: 16px;
-        }
-        .services-list {
-            list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
+            line-height: 1.6;
         }
-        .services-list li {
-            color: #ddd;
-            font-size: 0.95rem;
+
+        .wrapper {
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--accent-subtle);
+            padding-bottom: 20px;
+        }
+
+        .brand-tag {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 4px 12px;
+            border-radius: 99px;
             letter-spacing: 0.5px;
         }
-        .btn {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #121212;
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #10b981;
+            border-radius: 50%;
+        }
+
+        .hero {
+            text-align: left;
+            margin-bottom: 45px;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 640px;
+            font-weight: 300;
+        }
+
+        .grid-title {
+            font-size: 0.75rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 45px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 24px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .card:hover {
+            border-color: #52525b;
+            transform: translateY(-2px);
+        }
+
+        .card-num {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-subtle);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .card-h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .card-p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #18181b 0%, #09090b 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 36px 28px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .cta-box h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 480px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--text-main);
+            color: var(--bg);
             padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: background 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #d4d4d8;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            padding: 14px 24px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            border-radius: 4px;
-            transition: background-color 0.2s ease;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
         }
-        .btn:hover {
-            background-color: #cccccc;
+
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--accent-subtle);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 24px;
+            width: 100%;
+            max-width: 800px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>CONCRETE PROJECT</h1>
-        <p class="subtitle">Nowoczesna manufaktura. Surowe odlewy z betonu architektonicznego, formy z druku 3D oraz detale w stylu loft.</p>
+    <div class="wrapper">
+        <header>
+            <span class="brand-tag">Concrete Project</span>
+            <span class="status-badge"><span class="status-dot"></span> Przyjmujemy zapytania B2B / B2C</span>
+        </header>
 
-        <div class="services">
-            <div class="services-title">Zakres realizacji</div>
-            <ul class="services-list">
-                <li>Detale z betonu architektonicznego na zamówienie (B2B / B2C)</li>
-                <li>Projektowanie i druk 3D form matrycowych</li>
-                <li>Odlewy i prototypowanie</li>
-            </ul>
-        </div>
+        <section class="hero">
+            <h1>CONCRETE PROJECT</h1>
+            <p class="hero-desc">Studio projektowe i manufaktura. Łączymy precyzję druku 3D, matrycowe formowanie oraz rzemiosło betonu architektonicznego i gipsu polimerowego.</p>
+        </section>
 
-        <a href="mailto:kontakt@concreteproject.pl" class="btn">Skontaktuj się z nami</a>
+        <div class="grid-title">Zakres Realizacji</div>
+        <section class="grid">
+            <div class="card">
+                <div class="card-num">01</div>
+                <div class="card-h3">Detale Architektoniczne</div>
+                <div class="card-p">Autorskie odlewy z betonu i gipsu polimerowego do wnętrz loftowych oraz komercyjnych.</div>
+            </div>
+            <div class="card">
+                <div class="card-num">02</div>
+                <div class="card-h3">Druk 3D & Formy</div>
+                <div class="card-p">Projektowanie CAD i precyzyjny druk 3D matryc FDM do seryjnych oraz unikalnych odlewów.</div>
+            </div>
+            <div class="card">
+                <div class="card-num">03</div>
+                <div class="card-h3">Prototypowanie</div>
+                <div class="card-p">Kompleksowa realizacja indywidualnych koncepcji — od modelu cyfrowego po gotowy element.</div>
+            </div>
+        </section>
+
+        <section class="cta-box">
+            <h2>Masz projekt do zrealizowania?</h2>
+            <p>Realizujemy zlecenia pod wymiar, koncepcje architektoniczne oraz krótkie serie produktowe.</p>
+            <div class="actions">
+                <a href="mailto:kontakt@concreteproject.pl" class="btn-primary">Wyślij zapytanie</a>
+                <a href="https://pl.pinterest.com/concreteproject/" target="_blank" rel="noopener" class="btn-secondary">Zobacz Pinterest</a>
+            </div>
+        </section>
     </div>
+
+    <footer>
+        &copy; 2026 CONCRETE PROJECT &bull; Wrocław, Polska
+    </footer>
 
 </body>
 </html>
