@@ -11,7 +11,6 @@
             --border: #242428;
             --text-main: #ededef;
             --text-muted: #8e8e93;
-            --accent: #ffffff;
         }
 
         * {
@@ -46,11 +45,10 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .logo-text {
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .header-logo {
+            height: 32px;
+            width: auto;
+            display: block;
         }
 
         .location-tag {
@@ -63,12 +61,12 @@
             margin-bottom: 36px;
         }
 
-        h1 {
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            margin-bottom: 14px;
-            text-transform: uppercase;
+        .hero-logo {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
         }
 
         .hero-desc {
@@ -78,7 +76,6 @@
             line-height: 1.6;
         }
 
-        /* Pinterest Bridge Box */
         .pinterest-box {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -140,7 +137,6 @@
             border-color: #3f3f46;
         }
 
-        /* Minimal Services */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -184,19 +180,18 @@
 
     <div class="container">
         <header>
-            <span class="logo-text">Concrete Project</span>
+            <img src="logo.png" alt="Concrete Project Logo" class="header-logo">
             <span class="location-tag">Wrocław &bull; Polska</span>
         </header>
 
         <section class="hero">
-            <h1>CONCRETE PROJECT</h1>
+            <img src="logo.png" alt="CONCRETE PROJECT" class="hero-logo">
             <p class="hero-desc">Studio projektowe i mikromanufaktura. Łączymy cyfrowe modelowanie 3D z rzemiosłem betonu architektonicznego i gipsu polimerowego.</p>
         </section>
 
-        <!-- Główny Most Pinterest -> Wycena -->
         <section class="pinterest-box">
             <h2>Masz pomysł lub szukasz inspiracji?</h2>
-            <p>Przejrzyj nasze tablice na Pintereście. Jeśli masz własną przypinkę, zdjęcie lub szkic – wyślij go do nas. Przygotujemy cyfrowy model 3D i przedstawimy bezpłatną wycenę realizacji.</p>
+            <p>Przejrzyj nasze tablice na Pintereście. Jeśli masz własny projekt, zdjęcie lub szkic – wyślij go do nas. Przygotujemy cyfrowy model 3D i przedstawimy bezpłatną wycenę realizacji.</p>
             
             <div class="btn-group">
                 <a href="https://pl.pinterest.com/concreteproject/" target="_blank" rel="noopener" class="btn btn-pinterest">
@@ -215,7 +210,7 @@
             </div>
             <div class="service-item">
                 <h3>Formy & Druk 3D</h3>
-                <p>Projektowanie CAD i matryce FDM do odlewów.</p>
+                <p>Projektowanie CAD i matryce do odlewów.</p>
             </div>
             <div class="service-item">
                 <h3>Prototypowanie</h3>
