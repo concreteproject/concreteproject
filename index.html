@@ -40,15 +40,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
             padding-bottom: 16px;
             border-bottom: 1px solid var(--border);
         }
 
-        .header-logo {
-            height: 32px;
-            width: auto;
-            display: block;
+        .brand-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-main);
         }
 
         .location-tag {
@@ -61,12 +63,14 @@
             margin-bottom: 36px;
         }
 
+        /* Skalowanie logo bez szarych ramek */
         .hero-logo {
-            max-width: 280px;
+            max-width: 220px;
             width: 100%;
             height: auto;
             display: block;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            mix-blend-mode: lighten; /* Auto-wtapianie, jeśli obrazek ma ciemne tło */
         }
 
         .hero-desc {
@@ -180,7 +184,7 @@
 
     <div class="container">
         <header>
-            <img src="concrete-3.png" alt="Concrete Project Logo" class="header-logo">
+            <span class="brand-name">Concrete Project</span>
             <span class="location-tag">Wrocław &bull; Polska</span>
         </header>
 
@@ -191,7 +195,7 @@
 
         <section class="pinterest-box">
             <h2>Masz pomysł lub szukasz inspiracji?</h2>
-            <p>Przejrzyj nasze tablice na Pintereście. Jeśli masz własny projekt, zdjęcie lub szkic – wyślij go do nas. Przygotujemy cyfrowy model 3D i przedstawimy bezpłatną wycenę realizacji.</p>
+            <p>Przejrzyj nasze tablice na Pintereście. Jeśli masz własną przypinkę, zdjęcie lub szkic – wyślij go do nas. Przygotujemy cyfrowy model 3D i przedstawimy bezpłatną wycenę realizacji.</p>
             
             <div class="btn-group">
                 <a href="https://pl.pinterest.com/concreteproject/" target="_blank" rel="noopener" class="btn btn-pinterest">
@@ -210,7 +214,7 @@
             </div>
             <div class="service-item">
                 <h3>Formy & Druk 3D</h3>
-                <p>Projektowanie CAD i matryce do odlewów.</p>
+                <p>Projektowanie CAD i matryce FDM do odlewów.</p>
             </div>
             <div class="service-item">
                 <h3>Prototypowanie</h3>
